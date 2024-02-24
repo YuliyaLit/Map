@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <link href="https://unpkg.com/maplibre-gl@3.x/dist/maplibre-gl.css" rel="stylesheet" />
+    <style>
+      body { margin: 0; }
+      #map { height: 100vh; }
+    </style>
+  </head>
+  <body>
+    <div id="map" />
+    <script src="https://unpkg.com/maplibre-gl@3.x/dist/maplibre-gl.js"></script>
+    <script>
+      const apiKey = "v1.public.eyJqdGkiOiI2NTUyMDczNi01MjNmLTRkNTEtOTlhYS1hMzM5NzczZTA1NmYifbGlU6ZCyN3VJN88g0ZNXAGcIN74VOH4NB3CnS7cBOXWDtTFcP9IyLvPz4vHgwsply5ItmkNf2mUowWtMDe1wjKZu7omLwQtLMCdMXQZatri1Q3R5sN4kxeA5-v2DDXz1RDOJeCfWvW2W2OADd8ulEv56UbPzkU7iEKeYMqky1g5zToa2z6bdJaKHnlbGrNAkmt6a2Bg7mwOmcbWJnHm8a6y6Efvx-F1jXRNooNrkY7KVSCmtX5cQ7YBXF4Go_71B5zMAhSnzTx1JUAdK1qYrnEZ1G-TgyZzs6dDue8Q4ARxhLENlDIZmBZEBjGBp_V0oglIlfMkngGjygWQKfFkTzM.Njg1MGZlZTUtYTI2ZS00MDdlLWJjNDktMDNmZDlkNzVmMjQ0";
+      const mapName = "strelchukmap";
+      const region = "ap-south-1";
+
+      const map = new maplibregl.Map({
+        container: "map",
+        style: `https://maps.geo.${region}.amazonaws.com/maps/v0/maps/${mapName}/style-descriptor?key=${apiKey}`,
+        center: [-123.115898, 49.295868],
+        zoom: 11,
+      });
+      map.addControl(new maplibregl.NavigationControl(), "top-left");
+    </script>
+  </body>
+</html>
